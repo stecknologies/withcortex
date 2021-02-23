@@ -1,8 +1,10 @@
 import React from 'react'
 import Link from 'next/link'
-
+import Image from 'next/image'
 const links = [
-  { href: 'https://github.com/segmentio/create-next-app', label: 'Github' }
+  { href: '/graph-portability', label: 'Graph Portability' },
+  { href: 'https://github.com/stecknologies/withcortex', label: 'Github' },
+  { href: 'https://twitter.com/withcortex', label: 'Twitter' }
 ].map(link => {
   link.key = `nav-link-${link.href}-${link.label}`
   return link
@@ -13,7 +15,7 @@ const Nav = () => (
     <ul>
       <li>
         <Link prefetch href="/">
-          <a>Home</a>
+          <Image src="/images/cortex-icon.png" alt="Cortex icon" width="153" height="125" />
         </Link>
       </li>
       <ul>
