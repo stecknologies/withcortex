@@ -2,21 +2,28 @@ import React from 'react'
 import Link from 'next/link'
 import Head from '../components/head'
 import Nav from '../components/nav'
+import withDarkMode, {useDarkMode}  from 'next-dark-mode'
 
-const Home = () => (
-  <div>
-    <Head title="Manifesto | Cortex" />
-    <Nav />
+const Home = props => {
+  const {
+    darkModeActive,    // boolean - whether the dark mode is active or not
+  } = useDarkMode()
+
+  return(
+  <div className={darkModeActive ? 'dark' : 'light'}>
+    <Head title="Cortex Manifesto" />
+    <Nav darkModeActive={darkModeActive} />
 
     <div className="hero">
       <h1 className="title">Cortex Manifesto</h1>
+      <small>Published on Feb. 23rd, 2021</small>
       <p className="description">
       Cortex is a value-based technology organization. We want to reassemble tools to democratize knowledge and creation. All of the work that we do is led by a guiding thesis: 
-      <span>we can re-purpose pre-existing tools to solve the easiest problems without starting from scratch.</span>
+      <b> we can re-purpose pre-existing tools to solve the easiest problems without starting from scratch.</b>
       </p>
       <p>We post this manifesto to hold ourselves and our community accountable to our values and our vision.<br/>
       We hold these truths to be self-evident:</p>
-      <ul>
+      <ol>
         <li>Personal data and identity should be portable and secure across the Internet</li>
         <li>A tool should solve a concrete purpose, and can be gamified to make the experience more joyful, not corruptly persuasive</li>
         <li>Tools should help us perform multiple actions without compromising our focus.</li>
@@ -24,16 +31,16 @@ const Home = () => (
         <li>Tech should give us the space and relational information we need to explore and understand.</li>
         <li>Structuring thoughts and actions into trails help us make quicker associations and smarter decisions.</li>
         <li>Our mental and physical wellbeing are crucial to the quality of our lives and our work. </li>
-        <li>Organizations should strive to act as pro-bono government agencies.(talk about community)</li>
+        <li>Organizations should strive to act as pro-bono government agencies.</li>
         <li>A connection with nature helps us better identify what is essential.</li>
         <li>If we can re-purpose pre-existing tools to solve the easiest problems without starting from scratch, then we will enter a golden age we haven't seen since the likes of ancient Roam.</li>
-      </ul>
+      </ol>
     </div>
-
     <style jsx>{`
       .hero {
-        width: 100%;
-        color: #333;
+        width: 60%;
+        text-align: center;
+        margin: auto;
       }
       .title {
         margin: 0;
@@ -46,37 +53,19 @@ const Home = () => (
       .description {
         text-align: center;
       }
-      .row {
-        max-width: 880px;
-        margin: 80px auto 40px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
+      .li{
+        margin-bottom: 2.5%
       }
-      .card {
-        padding: 18px 18px 24px;
-        width: 220px;
-        text-align: left;
-        text-decoration: none;
-        color: #434343;
-        border: 1px solid #9b9b9b;
-      }
-      .card:hover {
-        border-color: #067df7;
-      }
-      .card h3 {
-        margin: 0;
-        color: #067df7;
-        font-size: 18px;
-      }
-      .card p {
-        margin: 0;
-        padding: 12px 0 0;
-        font-size: 13px;
-        color: #333;
+      .light {
+        background-color: #fff;
+        color: #353F71;
+      } 
+      .dark {
+        background-color: #10171d;
+        color: #dfdfdf;
       }
     `}</style>
   </div>
-)
+  )}
 
-export default Home
+export default withDarkMode(Home)

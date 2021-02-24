@@ -1,5 +1,5 @@
 {
-  "name": "create-next-example-app",
+  "name": "withcortex",
   "scripts": {
     "dev": "next",
     "build": "next build",
@@ -7,8 +7,10 @@
   },
   "dependencies": {
     "next": "^10.0.7",
+    "next-dark-mode": "^2.3.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-iframe": "^1.8.0"
+    "react-iframe": "^1.8.0",
+    "use-dark-mode": "^2.3.1"
   }
 }

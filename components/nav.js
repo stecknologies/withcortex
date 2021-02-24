@@ -2,23 +2,27 @@ import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 const links = [
-  { href: '/graph-portability', label: 'Graph Portability' },
-  { href: 'https://github.com/stecknologies/withcortex', label: 'Github' },
+  { href: 'https://about.withcortex.com', label: 'About' },
+  { href: 'https://graphportability.withcortex.com', label: 'Graph Portability' },
+  { href: 'https://github.com/stecknologies/withcortex', label: 'GitHub' },
   { href: 'https://twitter.com/withcortex', label: 'Twitter' }
 ].map(link => {
   link.key = `nav-link-${link.href}-${link.label}`
   return link
 })
 
-const Nav = () => (
+
+const Nav = (props) => {
+  const darkModeActiveVar = props.darkModeActive ? '#10171d' : '#fff';
+  return(
   <nav>
     <ul>
       <li>
         <Link prefetch href="/">
-          <Image src="/images/cortex-icon.png" alt="Cortex icon" width="153" height="125" />
+          <Image src="/images/cortex-icon.png" alt="Cortex icon" width="87" height="75" />
         </Link>
       </li>
-      <ul>
+      <ul className={props.darkModeActive ? 'nav-dark' : 'nav-light'}>
         {links.map(({ key, href, label }) => (
           <li key={key}>
             <Link href={href}>
@@ -34,6 +38,7 @@ const Nav = () => (
         margin: 0;
         font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir,
           Helvetica, sans-serif;
+        background-color: ${darkModeActiveVar};
       }
       nav {
         text-align: center;
@@ -50,12 +55,17 @@ const Nav = () => (
         padding: 6px 8px;
       }
       a {
-        color: #067df7;
         text-decoration: none;
         font-size: 13px;
       }
+      .nav-dark a{
+        color: #dfdfdf;
+      }
+      .nav-light a{
+        color: #353F71;
+      }
     `}</style>
   </nav>
-)
+)}
 
 export default Nav

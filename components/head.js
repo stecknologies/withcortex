@@ -2,9 +2,9 @@ import React from 'react'
 import NextHead from 'next/head'
 import { string } from 'prop-types'
 
-const defaultDescription = ''
-const defaultOGURL = ''
-const defaultOGImage = ''
+const defaultDescription = 'Cortex is a threaded browser for focused work.'
+const defaultOGURL = 'https://withcortex.com'
+const defaultOGImage = 'images/cortex-icon.png'
 
 const Head = props => (
   <NextHead>
