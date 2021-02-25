@@ -1,15 +1,19 @@
-import React from 'react'
+import posthog from 'posthog-js'
+import React, {useEffect} from 'react'
 import Link from 'next/link'
 import Head from '../components/head'
 import Nav from '../components/nav'
 import withDarkMode, {useDarkMode}  from 'next-dark-mode'
-import posthog from 'posthog-js'
 
-const Home = props => {
-  const {
-    darkModeActive,    // boolean - whether the dark mode is active or not
-  } = useDarkMode()
-  posthog.init('HAWIKOJJRBHkoVjAEHJGdEiHvBXVZri3m-rzS9hbN2I', { api_host: 'https://app.posthog.com' })
+function Home(){
+
+    const {
+      darkModeActive,    // boolean - whether the dark mode is active or not
+    } = useDarkMode();
+
+    useEffect(() => {
+      posthog.init('HAWIKOJJRBHkoVjAEHJGdEiHvBXVZri3m-rzS9hbN2I', { api_host: 'https://app.posthog.com' });
+    }, [])
 
   return(
   <div className={darkModeActive ? 'dark' : 'light'}>
