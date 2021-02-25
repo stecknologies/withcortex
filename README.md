@@ -1,1 +1,1 @@
-The homepage for Cortex
+The homepage for Cortex, the threaded browser for focused work.
