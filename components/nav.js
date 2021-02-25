@@ -2,8 +2,8 @@ import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 const links = [
-  { href: 'https://about.withcortex.com', label: 'About' },
-  { href: 'https://graphportability.withcortex.com', label: 'Graph Portability' },
+  { href: 'https://roamresearch.com/#/app/Dylan/page/ZCdcKEcP2', label: 'About' },
+  { href: 'https://roamresearch.com/#/app/Dylan/page/_-mXEVebF', label: 'Graph Portability' },
   { href: 'https://github.com/stecknologies/withcortex', label: 'GitHub' },
   { href: 'https://twitter.com/withcortex', label: 'Twitter' }
 ].map(link => {
