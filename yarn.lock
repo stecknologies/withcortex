@@ -705,6 +705,11 @@
   "resolved" "https://registry.yarnpkg.com/expand-template/-/expand-template-2.0.3.tgz"
   "version" "2.0.3"
 
+"fflate@^0.4.1":
+  "integrity" "sha512-FJqqoDBR00Mdj9ppamLa/Y7vxm+PRmNWA67N846RvsoYVMKB4q3y/de5PA7gUmRMYK/8CMz2GDZQmCRN1wBcWA=="
+  "resolved" "https://registry.npmjs.org/fflate/-/fflate-0.4.8.tgz"
+  "version" "0.4.8"
+
 "fill-range@^7.0.1":
   "integrity" "sha512-qOo9F+dMUmC2Lcb4BbVvnKJxTPjCm+RRpe4gDuGrzkL7mEVl/djYSu2OdQ2Pa302N4oqkSg9ir6jaLWJ2USVpQ=="
   "resolved" "https://registry.yarnpkg.com/fill-range/-/fill-range-7.0.1.tgz"
@@ -1337,6 +1342,13 @@
     "line-column" "^1.0.2"
     "nanoid" "^3.1.16"
     "source-map" "^0.6.1"
+
+"posthog-js@^1.8.7":
+  "integrity" "sha512-HLzaJ66FG2q11UySPu9z6IAq5K5Bcva7xNSQFt64BOH5D8yLvyARy2Uy+aamy8dOcwG3ibGmuxw7YiPmZNaAZg=="
+  "resolved" "https://registry.npmjs.org/posthog-js/-/posthog-js-1.8.7.tgz"
+  "version" "1.8.7"
+  dependencies:
+    "fflate" "^0.4.1"
 
 "prebuild-install@^6.0.0":
   "integrity" "sha512-7GOJrLuow8yeiyv75rmvZyeMGzl8mdEX5gY69d6a6bHWmiPevwqFw+tQavhK0EYMaSg3/KD24cWqeQv1EWsqDQ=="

@@ -3,11 +3,13 @@ import Link from 'next/link'
 import Head from '../components/head'
 import Nav from '../components/nav'
 import withDarkMode, {useDarkMode}  from 'next-dark-mode'
+import posthog from 'posthog-js'
 
 const Home = props => {
   const {
     darkModeActive,    // boolean - whether the dark mode is active or not
   } = useDarkMode()
+  posthog.init('HAWIKOJJRBHkoVjAEHJGdEiHvBXVZri3m-rzS9hbN2I', { api_host: 'https://app.posthog.com' })
 
   return(
   <div className={darkModeActive ? 'dark' : 'light'}>
